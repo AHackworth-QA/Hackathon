@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VehicleMonitor.Data;
 
 namespace VehicleMonitorAPI
 {
@@ -33,8 +34,7 @@ namespace VehicleMonitorAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VehicleMonitorAPI", Version = "v1" });
             });
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDBContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
             b => b.MigrationsAssembly("StudentsAndCourses.Web")));
         }
