@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VehicleMonitor.Models.Binding {
 
-    class VehicleDetails {
+    public class VehicleDetails {
         public double Temperature { get; set; }
         public double Humidity { get; set; }
     }
