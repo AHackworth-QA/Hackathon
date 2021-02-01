@@ -23,11 +23,11 @@ namespace VehicleMonitorAPI.Controllers
         [HttpGet]
         public IEnumerable<VehicleViewModel> Get()
         {
-            var allCourses = repository.Vehicles.FindAll();
+            var allVehicles = repository.Vehicles.FindAll();
             List<VehicleViewModel> vehicleViewModels = new List<VehicleViewModel>();
             foreach(var vehicle in allVehicles)
             {
-                vehicleViewModels.Add(new VehicleViewModel() { Vehicle = vehicle })
+                vehicleViewModels.Add(new VehicleViewModel() { Vehicle = vehicle });
             }
             foreach(var vehicleViewModel in vehicleViewModels)
             {
@@ -109,7 +109,7 @@ namespace VehicleMonitorAPI.Controllers
             vehicleToUpdate.GPS = vehicle.GPS;
             repository.Save();
             var studentsInCourse = repository.Registrations.FindByCondition(c => c.Course.Id == id).Select(c => c.Student).ToList(); //NEEDS WORK
-            var VehicleFoundViewModel = new VehicleViewModel { Course = courseToUpdate, Students = studentsInCourse };
+            var VehicleFoundViewModel = new VehicleViewModel { Vehicle = VehicleToUpdate, Students = studentsInCourse };
             return vehicleFoundViewModel;
         }
         // DELETE api/<VehicleController>/5
