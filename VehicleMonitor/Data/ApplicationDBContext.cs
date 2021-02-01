@@ -8,14 +8,14 @@ namespace VehicleMonitor.Data {
 
     public class ApplicationDBContext : DbContext {
 
-        public static string connectionString = "";
+        public static string connectionString = "Data Source=.;Initial Catalog=BAEDB;Integrated Security=True";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseSqlServer(connectionString);
         }
 
         public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<VehiclePos> VehicleGPSs { get; set; }
+        public DbSet<VehiclePos> VehiclePositions { get; set; }
 
     }
 
