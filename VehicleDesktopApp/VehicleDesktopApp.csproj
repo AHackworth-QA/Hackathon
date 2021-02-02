@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VehicleMonitorAPI\VehicleMonitorAPI.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\VehicleMonitor\VehicleMonitor.csproj" />
   </ItemGroup>
 
