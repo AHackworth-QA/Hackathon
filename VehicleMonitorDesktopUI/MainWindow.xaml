@@ -1,0 +1,40 @@
+﻿<Window x:Class="VehicleMonitorDesktopUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VehicleMonitorDesktopUI"
+        mc:Ignorable="d"
+        Title="BAE Systems Vehicle Monitor" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="VehicleList" HorizontalAlignment="Left" Height="21" Margin="0,66,0,0" Text="Vehicles List:" TextWrapping="Wrap" VerticalAlignment="Top" Width="103" Grid.RowSpan="2" Background="White" Foreground="black" FontFamily="Yu Gothic Medium" FontSize="14" FontWeight="Bold" TextChanged="VehicleList_TextChanged"/>
+        <ListView x:Name="AllVehiclesList" HorizontalAlignment="Center" Height="347" Grid.Row="1" VerticalAlignment="Center" Width="267" SelectionChanged="ListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--View all vehicles operation-->
+        <ListView x:Name="VehicleListView" Grid.Row="1" Grid.Column="0" SelectionChanged="CarsListView_SelectionChanged" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox HorizontalAlignment="Left" Height="38" Text="BAE Systems" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Background="#FFED1A3B" Foreground="White" FontFamily="Yu Gothic Medium" FontWeight="Bold" FontSize="24"/>
+
+    </Grid>
+</Window>
