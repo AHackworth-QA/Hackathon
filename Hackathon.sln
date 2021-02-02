@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleMonitor", "VehicleMonitor\VehicleMonitor.csproj", "{91FAE2E9-EAD1-4CFF-AB1A-CCD1C4558507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitorAPI", "VehicleMonitorAPI\VehicleMonitorAPI.csproj", "{2BD94A43-FBE6-465C-B574-5D54C378BFB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleMonitorAPI", "VehicleMonitorAPI\VehicleMonitorAPI.csproj", "{2BD94A43-FBE6-465C-B574-5D54C378BFB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitorDesktop", "VehicleMonitorDesktop\VehicleMonitorDesktop.csproj", "{315F1744-EEFF-4BC0-99B1-5559D634C7C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,18 @@ Global
 		{2BD94A43-FBE6-465C-B574-5D54C378BFB5}.Release|x64.Build.0 = Release|Any CPU
 		{2BD94A43-FBE6-465C-B574-5D54C378BFB5}.Release|x86.ActiveCfg = Release|Any CPU
 		{2BD94A43-FBE6-465C-B574-5D54C378BFB5}.Release|x86.Build.0 = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|x64.Build.0 = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Debug|x86.Build.0 = Debug|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|x64.ActiveCfg = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|x64.Build.0 = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|x86.ActiveCfg = Release|Any CPU
+		{315F1744-EEFF-4BC0-99B1-5559D634C7C8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

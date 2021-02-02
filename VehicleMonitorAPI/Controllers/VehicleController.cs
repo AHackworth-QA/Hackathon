@@ -22,10 +22,10 @@ namespace VehicleMonitorAPI.Controllers
         }
 
         [HttpGet("all")]
-        public ActionResult<IEnumerable<Vehicle>> AllCars()
+        public ActionResult<IEnumerable<Vehicle>> AllVehicles()
         {
-            var allCars = VehicleServices.GetVehicles();
-            return Ok(allCars);
+            var allVehicles = VehicleServices.GetVehicles();
+            return Ok(allVehicles);
         }
 
         [HttpGet("{id}")]
