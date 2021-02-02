@@ -22,10 +22,10 @@ namespace VehicleMonitorAPI.Controllers
         }
 
         [HttpGet("all")]
-        public ActionResult<IEnumerable<Vehicle>> AllCars()
+        public ActionResult<IEnumerable<Vehicle>> AllVehicles()
         {
-            var allCars = VehicleServices.GetVehicles();
-            return Ok(allCars);
+            var allVehicles = VehicleServices.GetVehicles();
+            return Ok(allVehicles);
         }
 
         [HttpGet("{id}")]
@@ -42,12 +42,13 @@ namespace VehicleMonitorAPI.Controllers
             var createdVehicle = VehicleServices.AddVehicle(addVehicle);
             return Ok(createdVehicle);
         }
+
         [HttpPut("{id}")]
         public ActionResult<Vehicle> UpdateVehicle(int id, VehicleDetails updateVehicle)
         {
             var vehicleToUpdate = VehicleServices.GetVehicle(id);
             if (vehicleToUpdate == null)
-                return NotFound("Sorry, we could not find the vehicle to update");
+                return NotFound($"Vehicle with id {id} was not found.");
             var updatedVehicle = VehicleServices.UpdateVehicle(updateVehicle, id);
             return Ok(updatedVehicle);
         }
@@ -56,7 +57,7 @@ namespace VehicleMonitorAPI.Controllers
         {
             var vehicleToDelete = VehicleServices.GetVehicle(id);
             if (vehicleToDelete == null)
-                return NotFound("Sorry, we could not find the vehicle to delete");
+                return NotFound("Sorry, we could not find the vehicle to delete.");
             var deletedVehicleResponse = VehicleServices.DeleteVehicle(id);
             return deletedVehicleResponse;
         }
