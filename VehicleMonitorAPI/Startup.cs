@@ -34,9 +34,7 @@ namespace VehicleMonitorAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VehicleMonitorAPI", Version = "v1" });
             });
-            services.AddDbContext<ApplicationDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-            b => b.MigrationsAssembly("StudentsAndCourses.Web")));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
