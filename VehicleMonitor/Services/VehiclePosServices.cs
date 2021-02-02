@@ -17,7 +17,7 @@ namespace VehicleMonitor.Services {
                 VehicleId = vehiclePosDetails.VehicleId,
                 Longitude = vehiclePosDetails.Longitude,
                 Latitude = vehiclePosDetails.Latitude,
-                Time = vehiclePosDetails.Time
+                Time = DateTime.Now
             };
             VehiclePos addedVehiclePos = dbContext.VehiclePositions.Add(vehiclePos).Entity;
             dbContext.SaveChanges();
@@ -40,7 +40,7 @@ namespace VehicleMonitor.Services {
                 vehiclePos.VehicleId = vehiclePosDetails.VehicleId;
                 vehiclePos.Longitude = vehiclePosDetails.Longitude;
                 vehiclePos.Latitude = vehiclePosDetails.Latitude;
-                vehiclePos.Time = vehiclePosDetails.Time;
+                vehiclePos.Time = DateTime.Now;
             }
             dbContext.SaveChanges();
             return vehiclePos;
