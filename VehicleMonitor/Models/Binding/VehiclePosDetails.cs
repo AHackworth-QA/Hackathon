@@ -8,7 +8,6 @@ namespace VehicleMonitor.Models.Binding {
         public int VehicleId { get; set; }
         public double Longitude { get; set; }
         public double Latitude { get; set; }
-        public DateTime Time { get; set; }
     }
 
 }
