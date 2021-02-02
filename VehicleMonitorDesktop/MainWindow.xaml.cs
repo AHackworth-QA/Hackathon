@@ -12,7 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using 
+
+
+
 
 namespace VehicleMonitorDesktop
 {
@@ -21,9 +23,11 @@ namespace VehicleMonitorDesktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Vehicle> allVehicles;
         public MainWindow()
         {
             InitializeComponent();
+            AllVehicles();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -31,10 +35,10 @@ namespace VehicleMonitorDesktop
 
         }
 
-        private async void AllVehicle();
+        private void AllVehicles()
         
         {
-        allVehicles = await Services.AllVehicle();
+        allVehicles = Services.AllVehicles();
         VehiclesListView.ItemsSource = allVehicles;
         }
 

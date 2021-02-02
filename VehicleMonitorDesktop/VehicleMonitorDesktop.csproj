@@ -6,4 +6,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleMonitorAPI\VehicleMonitorAPI.csproj" />
+    <ProjectReference Include="..\VehicleMonitor\VehicleMonitor.csproj" />
+  </ItemGroup>
+
 </Project>

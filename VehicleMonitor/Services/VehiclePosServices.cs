@@ -8,7 +8,7 @@ using VehicleMonitor.Models.Entity;
 
 namespace VehicleMonitor.Services {
 
-    class VehiclePosServices {
+    public class VehiclePosServices {
 
         private static ApplicationDBContext dbContext = new ApplicationDBContext();
 
