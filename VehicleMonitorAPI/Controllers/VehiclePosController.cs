@@ -14,12 +14,6 @@ namespace VehicleMonitorAPI.Controllers
     [Route("api/[controller]")]
     public class VehiclePosController : Controller
     {
-        private readonly ApplicationDBContext dbContext;
-        public VehiclePosController(ApplicationDBContext _dbContext)
-        {
-            dbContext = _dbContext;
-        }
-
         [HttpGet("all")]
         public ActionResult<IEnumerable<VehiclePos>> AllVehiclesPos(int id)
         {

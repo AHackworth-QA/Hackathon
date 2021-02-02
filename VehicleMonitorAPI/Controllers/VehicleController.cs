@@ -15,12 +15,6 @@ namespace VehicleMonitorAPI.Controllers
     [ApiController]
     public class VehicleController : Controller
     {
-        private readonly ApplicationDBContext dbContext;
-        public VehicleController(ApplicationDBContext _dbContext)
-        {
-            dbContext = _dbContext;
-        }
-
         [HttpGet("all")]
         public ActionResult<IEnumerable<Vehicle>> AllVehicles()
         {
