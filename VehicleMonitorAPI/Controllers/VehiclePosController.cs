@@ -12,47 +12,46 @@ using VehicleMonitor.Services;
 namespace VehicleMonitorAPI.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    public class VehicleController : Controller
+    public class VehiclePosController : Controller
     {
         [HttpGet("all")]
-        public ActionResult<IEnumerable<Vehicle>> AllVehicles()
+        public ActionResult<IEnumerable<VehiclePos>> AllVehiclesPos(int id)
         {
-            var allVehicles = VehicleServices.GetVehicles();
+            var allVehicles = VehiclePosServices.GetVehiclePositions(id);
             return Ok(allVehicles);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Vehicle> GetVehicle(int id)
+        public ActionResult<VehiclePos> GetVehiclePos(int id)
         {
-            var vehicleFound = VehicleServices.GetVehicle(id);
+            var vehicleFound = VehiclePosServices.GetVehiclePosition(id);
 
             return vehicleFound == null ? NotFound($"Vehicle with id {id} was not found.") : Ok(vehicleFound);
         }
 
         [HttpPost("add")]
-        public ActionResult<Vehicle> AddVehicle([FromBody] VehicleDetails addVehicle)
-        { 
-            var createdVehicle = VehicleServices.AddVehicle(addVehicle);
+        public ActionResult<VehiclePos> AddVehiclePos([FromBody] VehiclePosDetails addVehicle)
+        {
+            var createdVehicle = VehiclePosServices.AddVehiclePosition(addVehicle);
             return Ok(createdVehicle);
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Vehicle> UpdateVehicle(int id, VehicleDetails updateVehicle)
+        public ActionResult<VehiclePos> UpdateVehiclePos(int id, VehiclePosDetails updateVehicle)
         {
-            var vehicleToUpdate = VehicleServices.GetVehicle(id);
+            var vehicleToUpdate = VehiclePosServices.GetVehiclePosition(id);
             if (vehicleToUpdate == null)
                 return NotFound($"Vehicle with id {id} was not found.");
-            var updatedVehicle = VehicleServices.UpdateVehicle(updateVehicle, id);
+            var updatedVehicle = VehiclePosServices.UpdateVehiclePosition(updateVehicle, id);
             return Ok(updatedVehicle);
         }
         [HttpDelete("{id}")]
-        public ActionResult<int> DeleteVehicle(int id)
+        public ActionResult<int> DeleteVehiclePos(int id)
         {
-            var vehicleToDelete = VehicleServices.GetVehicle(id);
+            var vehicleToDelete = VehiclePosServices.GetVehiclePosition(id);
             if (vehicleToDelete == null)
                 return NotFound($"Vehicle with id {id} was not found.");
-            var deletedVehicleResponse = VehicleServices.DeleteVehicle(id);
+            var deletedVehicleResponse = VehiclePosServices.DeleteVehiclePosition(id);
             return deletedVehicleResponse;
         }
     }
