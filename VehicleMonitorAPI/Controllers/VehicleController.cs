@@ -15,17 +15,18 @@ namespace VehicleMonitorAPI.Controllers
     [ApiController]
     public class VehicleController : Controller
     {
+        VehicleServices vehicleServices = new VehicleServices();
         [HttpGet("all")]
         public ActionResult<IEnumerable<Vehicle>> AllVehicles()
         {
-            var allVehicles = VehicleServices.GetVehicles();
+            var allVehicles = vehicleServices.GetVehicles();
             return Ok(allVehicles);
         }
 
         [HttpGet("{id}")]
         public ActionResult<Vehicle> GetVehicle(int id)
         {
-            var vehicleFound = VehicleServices.GetVehicle(id);
+            var vehicleFound = vehicleServices.GetVehicle(id);
 
             return vehicleFound == null ? NotFound($"Vehicle with id {id} was not found.") : Ok(vehicleFound);
         }
@@ -33,26 +34,26 @@ namespace VehicleMonitorAPI.Controllers
         [HttpPost("add")]
         public ActionResult<Vehicle> AddVehicle([FromBody] VehicleDetails addVehicle)
         { 
-            var createdVehicle = VehicleServices.AddVehicle(addVehicle);
+            var createdVehicle = vehicleServices.AddVehicle(addVehicle);
             return Ok(createdVehicle);
         }
 
         [HttpPut("{id}")]
         public ActionResult<Vehicle> UpdateVehicle(int id, VehicleDetails updateVehicle)
         {
-            var vehicleToUpdate = VehicleServices.GetVehicle(id);
+            var vehicleToUpdate = vehicleServices.GetVehicle(id);
             if (vehicleToUpdate == null)
                 return NotFound($"Vehicle with id {id} was not found.");
-            var updatedVehicle = VehicleServices.UpdateVehicle(updateVehicle, id);
+            var updatedVehicle = vehicleServices.UpdateVehicle(updateVehicle, id);
             return Ok(updatedVehicle);
         }
         [HttpDelete("{id}")]
         public ActionResult<int> DeleteVehicle(int id)
         {
-            var vehicleToDelete = VehicleServices.GetVehicle(id);
+            var vehicleToDelete = vehicleServices.GetVehicle(id);
             if (vehicleToDelete == null)
                 return NotFound($"Vehicle with id {id} was not found.");
-            var deletedVehicleResponse = VehicleServices.DeleteVehicle(id);
+            var deletedVehicleResponse = vehicleServices.DeleteVehicle(id);
             return deletedVehicleResponse;
         }
     }

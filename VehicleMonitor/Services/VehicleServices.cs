@@ -8,11 +8,11 @@ using VehicleMonitor.Models.Entity;
 
 namespace VehicleMonitor.Services {
 
-    public static class VehicleServices {
+    public class VehicleServices {
 
-        private static ApplicationDBContext dbContext = new ApplicationDBContext();
+        private  ApplicationDBContext dbContext = new ApplicationDBContext();
 
-        public static Vehicle AddVehicle(VehicleDetails vehicleDetails) {
+        public Vehicle AddVehicle(VehicleDetails vehicleDetails) {
             Vehicle vehicle = new Vehicle() {
                 Temperature = vehicleDetails.Temperature,
                 Humidity = vehicleDetails.Humidity
@@ -22,17 +22,17 @@ namespace VehicleMonitor.Services {
             return addedVehicle;
         }
 
-        public static List<Vehicle> GetVehicles() {
+        public List<Vehicle> GetVehicles() {
             List<Vehicle> vehicles = dbContext.Vehicles.ToList();
             return vehicles;
         }
 
-        public static Vehicle GetVehicle(int id) {
+        public Vehicle GetVehicle(int id) {
             Vehicle vehicle = dbContext.Vehicles.Find(id);
             return vehicle;
         }
 
-        public static Vehicle UpdateVehicle(VehicleDetails vehicleDetails, int id) {
+        public Vehicle UpdateVehicle(VehicleDetails vehicleDetails, int id) {
             Vehicle vehicle = dbContext.Vehicles.Find(id);
             if (vehicle != null) {
                 vehicle.Temperature = vehicleDetails.Temperature;
@@ -42,7 +42,7 @@ namespace VehicleMonitor.Services {
             return vehicle;
         }
 
-        public static int DeleteVehicle(int id) {
+        public int DeleteVehicle(int id) {
             Vehicle vehicle = dbContext.Vehicles.Find(id);
             if (vehicle != null) {
                 dbContext.Vehicles.Remove(vehicle);
