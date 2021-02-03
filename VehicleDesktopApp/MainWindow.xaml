@@ -1,0 +1,130 @@
+﻿<Window x:Class="VehicleDesktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VehicleDesktopApp"
+        mc:Ignorable="d"
+    Title="BAE Vehicle Monitor" Height="1000" Width="1000" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <!-- Add vehicle-->
+        <StackPanel Margin="4" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+            <Label Content="Add New Vehicle Tab" Background="#FFB5B1B1" FontWeight="Bold"/>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Humidity:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="AddVehicleHumidityTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Temp:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="AddVehicleTemperatureTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Button x:Name="AddVehicleButton" Content="Add Vehicle" Click="AddVehicleButton_Click"/>
+        </StackPanel>
+        <!--View all vehicles operation-->
+        <ListView x:Name="VehiclesListView" Grid.Row="1" Grid.Column="0" Margin="0,42,0,0" SelectionChanged="VehiclesListView_SelectionChanged" SelectionMode="Single" Background="#FFBEB8B8" BorderBrush="Black" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Id}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--View Vehicle Details-->
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,42,0,0">
+
+            <TextBlock Text="Latitude:"/>
+            <TextBox Name="VehicleLatitudeTextBox" Width="111"/>
+            <TextBlock Text="Longitude"/>
+            <TextBox Name="VehicleLongitudeTextBox"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
+
+            <TextBlock Text="Humidity:"/>
+            <TextBox Name="VehicleHumidityTextBox" Width="111" TextChanged="VehicleHumidityTextBox_TextChanged"/>
+            <TextBlock Text="Temperature:"/>
+            <TextBox Name="VehicleTemperatureTextBox" TextChanged="VehicleTemperatureTextBox_TextChanged"/>
+
+
+
+        </StackPanel>
+        <!--Update Operations-->
+        <StackPanel Margin="4,4,4,303" Grid.Column="2" Grid.Row="1"  Name="UpdateStackPanel" Visibility="Visible">
+            <Label Content="Update New Vehicle Tab" Background="#FFB5B1B1" FontWeight="Bold"/>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Humidity:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleHumidityTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Temp:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleTemperatureTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Button x:Name="UpdateVehicleButton" Content="Update Vehicle" Click="UpdateVehicleButton_Click"/>
+            <Button x:Name="CancelUpdateVehicleButton" Content="Cancel" Click="CancelUpdateVehicleButton_Click"/>
+            <Label Content="Update Vehicle GPS Tab" Background="#FFB5B1B1" FontWeight="Bold"/>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Latitude:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleLatitudeTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Longitude:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleLongitudeTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Button x:Name="UpdateVehicleGpsButton" Content="Update Vehicle GPS Location" Click="UpdateVehicleGpsButton_Click"/>
+            <Button x:Name="CancelUpdateVehicleGpsButton" Content="Cancel" Click="CancelUpdateVehicleGpsButton_Click"/>
+
+        </StackPanel>
+        <!--Actions Operations-->
+        <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="4" Name ="ActionsPanel" Visibility="Hidden">
+            <Button Content="Delete" Background="Red" Foreground="White" Margin="4" Name ="DeleteActionButton" Click="DeleteActionButton_Click"/>
+            <Button Content="Update Vehicle " Margin="4" Name="UpdateActionButton" Click="UpdateActionButton_Click" />
+
+            <StackPanel Name="DeleteConfirmationStackPanel" Visibility="Hidden">
+                <Label>Do you really want to delete this vehicle?</Label>
+                <Button Content="Yes, Delete" Background="Red" Foreground="White" Margin="4" Click="ConfirmDelete_Click"/>
+                <Button Content="No, Cancel" Margin="4" Click="CancelDeleteAction_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBox HorizontalAlignment="Center" Height="38" Text="BAE SYSTEMS" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Yu Gothic UI" FontSize="24" FontWeight="Bold" Background="red" Foreground="White" Grid.Column="1" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Center" Height="30" Margin="0,12,0,0" Grid.Row="1" Text="All Vehicles List:" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" Background="#FFBEB8B9" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment ="Center" Grid.Row="1" Grid.Column="1" Text="Vehicle Sensor Data" VerticalAlignment="Top" Margin="0,287,0,0" BorderBrush="Black" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" Height="31" Margin="0,11,0,0" Grid.Row="1" Text="Vehicle GPS Data:" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" BorderBrush="Black"/>
+        <Button x:Name="connectButton" Content="Connect" Grid.Column="1" HorizontalAlignment="Center" Height="22" Margin="0,38,0,0" VerticalAlignment="Top" Width="250" Background="Green" Click="ConnectButton_Click"/>
+    </Grid>
+</Window>
