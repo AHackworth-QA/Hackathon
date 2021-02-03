@@ -48,11 +48,23 @@
             </ListView.ItemTemplate>
         </ListView>
         <!--View Vehicle Details-->
-        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,42,0,0">
+
+            <TextBlock Text="Latitude:"/>
+            <TextBox Name="VehicleLatitudeTextBox" Width="111"/>
+            <TextBlock Text="Longitude"/>
+            <TextBox Name="VehicleLongitudeTextBox"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
+
             <TextBlock Text="Humidity:"/>
-            <TextBox Name="VehicleHumidityTextBox"/>
+            <TextBox Name="VehicleHumidityTextBox" Width="111"/>
             <TextBlock Text="Temperature:"/>
             <TextBox Name="VehicleTemperatureTextBox"/>
+
+
+
         </StackPanel>
         <!--Update Operations-->
         <StackPanel Margin="4,4,4,303" Grid.Column="2" Grid.Row="1"  Name="UpdateStackPanel" Visibility="Hidden">
@@ -75,11 +87,33 @@
             </Grid>
             <Button x:Name="UpdateVehicleButton" Content="Update Vehicle" Click="UpdateVehicleButton_Click"/>
             <Button x:Name="CancelUpdateVehicleButton" Content="Cancel" Click="CancelUpdateVehicleButton_Click"/>
+            <Label Content="Update Vehicle GPS Tab" Background="#FFB5B1B1" FontWeight="Bold"/>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Latitude:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleLatitudeTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Vehicle Longitude:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
+                <TextBox Name="UpdateVehicleLongitudeTextBox" Grid.Column="1" Margin="10,0,0,0"/>
+            </Grid>
+            <Button x:Name="UpdateVehicleGpsButton" Content="Update Vehicle GPS Location" Click="UpdateVehicleGpsButton_Click"/>
+            <Button x:Name="CancelUpdateVehicleGpsButton" Content="Cancel" Click="CancelUpdateVehicleGpsButton_Click"/>
+            
         </StackPanel>
         <!--Actions Operations-->
         <StackPanel Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" Margin="4" Name ="ActionsPanel" Visibility="Hidden">
             <Button Content="Delete" Background="Red" Foreground="White" Margin="4" Name ="DeleteActionButton" Click="DeleteActionButton_Click"/>
-            <Button Content="Update" Margin="4" Name="UpdateActionButton" Click="UpdateActionButton_Click" />
+            <Button Content="Update Vehicle " Margin="4" Name="UpdateActionButton" Click="UpdateActionButton_Click" />
+            
             <StackPanel Name="DeleteConfirmationStackPanel" Visibility="Hidden">
                 <Label>Do you really want to delete this vehicle?</Label>
                 <Button Content="Yes, Delete" Background="Red" Foreground="White" Margin="4" Click="ConfirmDelete_Click"/>
@@ -89,5 +123,7 @@
 
         <TextBox HorizontalAlignment="Center" Height="38" Text="BAE SYSTEMS" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontFamily="Yu Gothic UI" FontSize="24" FontWeight="Bold" Background="red" Foreground="White" Grid.Column="1" TextAlignment="Center"/>
         <TextBox HorizontalAlignment="Center" Height="30" Margin="0,12,0,0" Grid.Row="1" Text="All Vehicles List:" TextWrapping="Wrap" VerticalAlignment="Top" Width="376" Background="#FFBEB8B9" BorderBrush="Black"/>
+        <TextBox HorizontalAlignment ="Center" Grid.Row="1" Grid.Column="1" Text="Vehicle Sensor Data" VerticalAlignment="Top" Margin="0,300,0,0" BorderBrush="Black" />
+        <TextBox Grid.Column="1" HorizontalAlignment="Center" Height="31" Margin="0,11,0,0" Grid.Row="1" Text="Vehicle GPS Data:" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" BorderBrush="Black"/>
     </Grid>
 </Window>

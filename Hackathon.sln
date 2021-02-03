@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleMonitor", "VehicleMo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleMonitorAPI", "VehicleMonitorAPI\VehicleMonitorAPI.csproj", "{2BD94A43-FBE6-465C-B574-5D54C378BFB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleDesktopApp", "VehicleDesktopApp\VehicleDesktopApp.csproj", "{8CD92CB4-8654-4D1B-A9EB-0B593EAC1184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleDesktopApp", "VehicleDesktopApp\VehicleDesktopApp.csproj", "{8CD92CB4-8654-4D1B-A9EB-0B593EAC1184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

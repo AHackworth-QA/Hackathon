@@ -52,6 +52,7 @@ namespace VehicleDesktopApp
             {
                 Humidity = double.Parse(AddVehicleHumidityTextBox.Text),
                 Temperature = double.Parse(AddVehicleTemperatureTextBox.Text)
+                Latitude = 
             };
             var addVehicleResponse = await Services.AddVehicle(vehicleAddModel);
             if (addVehicleResponse != null)
