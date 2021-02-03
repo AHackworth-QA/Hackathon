@@ -10,9 +10,9 @@ namespace VehicleMonitor.Services {
 
     public class VehiclePosServices {
 
-        private static ApplicationDBContext dbContext = new ApplicationDBContext();
+        private ApplicationDBContext dbContext = new ApplicationDBContext();
 
-        public static VehiclePos AddVehiclePosition(VehiclePosDetails vehiclePosDetails) {
+        public VehiclePos AddVehiclePosition(VehiclePosDetails vehiclePosDetails) {
             VehiclePos vehiclePos = new VehiclePos() {
                 VehicleId = vehiclePosDetails.VehicleId,
                 Longitude = vehiclePosDetails.Longitude,
@@ -24,17 +24,17 @@ namespace VehicleMonitor.Services {
             return addedVehiclePos;
         }
 
-        public static List<VehiclePos> GetVehiclePositions(int vehicleId) {
+        public List<VehiclePos> GetVehiclePositions(int vehicleId) {
             List<VehiclePos> vehiclePositions = dbContext.VehiclePositions.Where(v => v.VehicleId == vehicleId).ToList();
             return vehiclePositions;
         }
 
-        public static VehiclePos GetVehiclePosition(int id) {
+        public VehiclePos GetVehiclePosition(int id) {
             VehiclePos vehiclePos = dbContext.VehiclePositions.Find(id);
             return vehiclePos;
         }
 
-        public static VehiclePos UpdateVehiclePosition(VehiclePosDetails vehiclePosDetails, int id) {
+        public VehiclePos UpdateVehiclePosition(VehiclePosDetails vehiclePosDetails, int id) {
             VehiclePos vehiclePos = dbContext.VehiclePositions.Find(id);
             if (vehiclePos != null) {
                 vehiclePos.VehicleId = vehiclePosDetails.VehicleId;
@@ -46,7 +46,7 @@ namespace VehicleMonitor.Services {
             return vehiclePos;
         }
 
-        public static int DeleteVehiclePosition(int id) {
+        public int DeleteVehiclePosition(int id) {
             VehiclePos vehiclePos = dbContext.VehiclePositions.Find(id);
             if (vehiclePos != null) {
                 dbContext.VehiclePositions.Remove(vehiclePos);
