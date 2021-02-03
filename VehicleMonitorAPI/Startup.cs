@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VehicleMonitor.Data;
+using VehicleMonitorAPI.Hubs;
 
 namespace VehicleMonitorAPI
 {
@@ -34,7 +35,7 @@ namespace VehicleMonitorAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VehicleMonitorAPI", Version = "v1" });
             });
-            
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +57,7 @@ namespace VehicleMonitorAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<VehicleHub>("/vehicleHub");
             });
         }
     }
