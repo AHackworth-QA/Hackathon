@@ -105,8 +105,8 @@
                 <Label Content="Vehicle Longitude:" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,93,0"/>
                 <TextBox Name="UpdateVehicleLongitudeTextBox" Grid.Column="1" Margin="10,0,0,0"/>
             </Grid>
-            <Button x:Name="UpdateVehicleGpsButton" Content="Update Vehicle GPS Location" Click="UpdateVehicleGpsButton_Click"/>
-            <Button x:Name="CancelUpdateVehicleGpsButton" Content="Cancel" Click="CancelUpdateVehicleGpsButton_Click"/>
+            <!--<Button x:Name="UpdateVehicleGpsButton" Content="Update Vehicle GPS Location" Click="UpdateVehicleGpsButton_Click"/>
+            <Button x:Name="CancelUpdateVehicleGpsButton" Content="Cancel" Click="CancelUpdateVehicleGpsButton_Click"/>-->
 
         </StackPanel>
         <!--Actions Operations-->
