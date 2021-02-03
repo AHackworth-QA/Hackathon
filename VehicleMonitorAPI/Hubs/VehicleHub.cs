@@ -18,9 +18,9 @@ namespace VehicleMonitorAPI.Hubs
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, "App Users");
             await base.OnDisconnectedAsync(exception);
         }
-        public async Task NewAlert()
+        public async Task SendAlert()
         {
-            await Clients.All.SendAsync("Data Added.");
+            await Clients.All.SendAsync("RecieveAlert");
         }
     }
 }

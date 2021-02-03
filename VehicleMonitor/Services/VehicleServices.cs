@@ -17,8 +17,10 @@ namespace VehicleMonitor.Services {
                 Temperature = vehicleDetails.Temperature,
                 Humidity = vehicleDetails.Humidity
             };
+           
             Vehicle addedVehicle = dbContext.Vehicles.Add(vehicle).Entity;
             dbContext.SaveChanges();
+           /// SignalRService.SendSignal(addedVehicle);
             return addedVehicle;
         }
 
