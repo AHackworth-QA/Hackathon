@@ -41,7 +41,7 @@ Currently the WPF app connects to the API and Database as they both get updated 
 5. Both the API and Desktop App should be up on your screen no, you can now follow the onscreen UI to click on vehicles and update or delete them.  
 
 
-#Ignore VehicleMonitorDesktopUI as this is redundant
+
 
 
 
