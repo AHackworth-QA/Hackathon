@@ -67,7 +67,7 @@
 
         </StackPanel>
         <!--Update Operations-->
-        <StackPanel Margin="4,4,4,303" Grid.Column="2" Grid.Row="1"  Name="UpdateStackPanel" Visibility="Visible">
+        <StackPanel Margin="4,4,4,303" Grid.Column="2" Grid.Row="1"  Name="UpdateStackPanel" Visibility="Hidden">
             <Label Content="Update New Vehicle Tab" Background="#FFB5B1B1" FontWeight="Bold"/>
             <Grid Margin="4">
                 <Grid.ColumnDefinitions>
