@@ -18,10 +18,7 @@ This application aims to store, read and track vehicle data that comes in from t
 The current application is comprised of three parts, an API, an SQL Database, and a WPF App. A real time update system was to be implemented with SignalR but this was not managed within the given timeframe.
 
 # API (James)
-The API works as a bridge between the WPF application and the SQL database and the CRUD commands associated with it. The API involves 2 controllers, One controlling the CRUD (Create, Read, Update, Delete) of the vehicles and another for CRUD control of the GPS data associated with such vehicles.
 
-# EntityFramework SQL Database Connection (Will)
-The data the application stores and uses are stored in an SQL database. To access the database, EntityFramework is used. The data is accessed by the rest of the system through CRUD methods in services classes.
 
 
 # WPF APP (Adam)
@@ -44,7 +41,7 @@ Currently the WPF app connects to the API and Database as they both get updated 
 5. Both the API and Desktop App should be up on your screen no, you can now follow the onscreen UI to click on vehicles and update or delete them.  
 
 
-
+#Ignore VehicleMonitorDesktopUI as this is redundant
 
 
 
