@@ -18,7 +18,7 @@ This application aims to store, read and track vehicle data that comes in from t
 The current application is comprised of three parts, an API, an SQL Database, and a WPF App. A real time update system was to be implemented with SignalR but this was not managed within the given timeframe.
 
 # API (James)
-
+The API works as a bridge between the WPF application and the SQL database and the CRUD commands associated with it. The API involves 2 controllers, One controlling the CRUD (Create, Read, Update, Delete) of the vehicles and another for CRUD control of the GPS data associated with such vehicles.
 
 # SQL DataBase (Will)
 
